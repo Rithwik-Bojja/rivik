@@ -3,13 +3,13 @@ trigger:
 parameters:
   - name: name
     type: string
-    default: 'DefaultName'
+    default: 'TestName'
   - name: id
     type: string
-    default: '00000'
+    default: '9999'
 jobs:
 - job: UseRuntimeParams
-  displayName: 'Job using runtime parameters'
+  displayName: 'Runtime paramaters'
   pool:
     vmImage: 'ubuntu-latest'
   steps:
