@@ -1,7 +1,7 @@
 trigger: none  # Disable CI trigger
 
 schedules:
-  - cron: "35 4 * * 2"
+  - cron: "34 4 * * 2"
     displayName: "10:00 AM IST - Wednesday run"
     branches:
       include:
