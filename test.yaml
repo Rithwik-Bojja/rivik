@@ -1,8 +1,8 @@
-trigger: none  # Disable CI trigger
+trigger: none  
 
 schedules:
   - cron: "40 4 * * 2"
-    displayName: "10:00 AM IST - Wednesday run"
+    displayName: "10:40 AM IST - Tuesday Run"
     branches:
       include:
         - main
@@ -14,4 +14,4 @@ pool:
 jobs:
   - job: SampleJob
     steps:
-      - script: echo "Scheduled run triggered!"
+      - script: echo "Hello Rithwik, it is triggering at scheduled time"
