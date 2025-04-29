@@ -1,0 +1,26 @@
+trigger: none 
+
+schedules:
+ - cron: '30 4 * * 5'
+    displayName: 'Friday 7:45 PM CDT'
+    branches:
+      include:
+        - master
+    always: true 
+
+pool:
+  name: Default
+
+jobs:
+  - job: Job_1
+    displayName: Agent job 1
+    steps:
+      - checkout: self
+        fetchDepth: 1
+
+      - task: PowerShell@2
+        displayName: 'CleanUp user PowerShell Script'
+        inputs:
+          targetType: 'inline'
+          script: |
+            Write-Host "hello world"
