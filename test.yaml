@@ -1,7 +1,17 @@
+trigger: none  # Disable CI trigger
+
 schedules:
-  - cron: "30 4 * * 3"  # 4:30 AM UTC every Wednesday
+  - cron: "30 4 * * 3"
     displayName: "10:00 AM IST - Wednesday run"
     branches:
       include:
         - master
-    always: true  # Ensure it runs even if no new changes
+    always: true
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+jobs:
+  - job: SampleJob
+    steps:
+      - script: echo "Scheduled run triggered!"
