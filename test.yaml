@@ -5,7 +5,7 @@ schedules:
     displayName: "10:00 AM IST - Wednesday run"
     branches:
       include:
-        - master
+        - main
     always: true
 
 pool:
