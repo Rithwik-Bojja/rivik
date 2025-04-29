@@ -1,0 +1,22 @@
+trigger:
+- none   
+parameters:
+  - name: name
+    type: string
+    default: 'DefaultName'
+  - name: id
+    type: string
+    default: '00000'
+jobs:
+- job: UseRuntimeParams
+  displayName: 'Job using runtime parameters'
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - task: PowerShell@2
+    displayName: 'Print Parameters'
+    inputs:
+      targetType: 'inline'
+      script: |
+        Write-Host "Name passed at runtime: ${{ parameters.name }}"
+        Write-Host "ID passed at runtime: ${{ parameters.id }}"
